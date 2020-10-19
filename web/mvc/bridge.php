@@ -1,5 +1,5 @@
 <?php
-echo "hit";
+
 // How controllers call Views & Models
 require_once "mvc/core/Controller.php";
 
