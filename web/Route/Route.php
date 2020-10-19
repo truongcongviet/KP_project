@@ -1,7 +1,7 @@
 
 <?php
 
-include('./mvc/core/Route.php');
+include('mvc/core/Route.php');
 
 // Add base route (startpage)
 Route::add('/login',function(){
@@ -11,7 +11,7 @@ Route::add('/login',function(){
     header('Location: '."/homesuccess");
     return;
   }
-  require_once "./mvc/views/pages/login.php";
+  require_once "mvc/views/pages/login.php";
   if(isset($_SESSION["checklogin"])){
     unset($_SESSION["checklogin"]);
   }
@@ -20,7 +20,7 @@ Route::add('/login',function(){
 // Simple test route that simulates static html file
 Route::add('/register', function () {
   
- require_once "./mvc/views/pages/register.php";
+ require_once "mvc/views/pages/register.php";
  
   if(isset($_SESSION["user"])){
     unset($_SESSION["user"]);
@@ -40,24 +40,24 @@ Route::add('/register', function () {
 }, 'get');
 
 Route::add('/register/post', function () {
-  require_once "./mvc/controllers/Register.php";
+  require_once "mvc/controllers/Register.php";
   new Register();
 }, 'post');
 
 // Post route example
 Route::add('/home', function () {
-  require_once "./mvc/views/pages/home.php";
+  require_once "mvc/views/pages/home.php";
 }, 'get');
 
 // Post route example
 Route::add('/login/post', function () {
-  require_once "./mvc/controllers/Login.php";
+  require_once "mvc/controllers/Login.php";
   new Login();
 }, 'post');
 
 Route::add('/homesuccess', function () {
  
-  require_once "./mvc/views/pages/successlogin.php";
+  require_once "mvc/views/pages/successlogin.php";
  
 }, 'get');
 
