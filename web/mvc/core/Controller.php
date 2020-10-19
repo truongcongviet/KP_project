@@ -1,11 +1,11 @@
 <?php
 class Controller{
   public function model($model){
-    require_once "./mvc/models/".$model.".php";
+    require_once "mvc/models/".$model.".php";
     return new $model;
   }
   public function validation($name){
-    require_once "./mvc/core/".$name.".php";
+    require_once "mvc/core/".$name.".php";
     return new $name;
   }
   public  function isLogged(){
